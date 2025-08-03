@@ -67,8 +67,12 @@ will stop the build.
 Run the tests with the following command:
 
 ```sh
-docker build -t bosh-io-release-resource --target tests .
+docker build -t bosh-io-release-resource --build-arg BUILDPLATFORM=<platform> --target tests .
 ```
+Where `<platform>` is one of:
+- linux/arm64/v8 - Build an image for Linux running on a 64-bit ARM v8 processor (e.g., Apple Silicon Mac).
+- windows/amd64 - Build an image for Windows running on a 64-bit Intel x86_64 processor.
+- darwin/amd64 -  Build an image for macOS running on a 64-bit Intel x86_64 processor
 
 ### Contributing
 
